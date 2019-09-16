@@ -1,1 +1,43 @@
-<p>home works!</p>
+<div #immersiveVideoWrapper class="cd-immersive-video">
+	<div class="intro-wrapper">
+		<div #productIntro class="product-intro">
+			<div>
+				<h1 class="item item-1">Yousef Ouda</h1>
+
+				<p class="item item-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam aspernatur quod libero doloribus provident! Laborum vero sint reprehenderit ratione quos.</p>
+
+				<a href="#0" class="cd-btn item item-3">Download &amp; Article</a>
+			</div>
+		</div> <!-- .product-intro -->
+
+		<div
+			#productPreview
+			[@onPreviewStateChange]="currentPreviewState"
+			(@onPreviewStateChange.done)="onPreviewDone()"
+			class="product-preview no-transition">
+			<div class="device-frame">
+				<img src="assets/img/mobile-frame.svg" alt="Device Frame">
+			</div>
+
+			<div class="product-image">
+				<img src="assets/img/video-fallback.jpg" alt="Product Preview">
+			</div>
+
+			<div #productVideo class="product-video">
+				<div #productVideoWrapper class="video-wrapper">
+					<video (canplay)="canPlay($event)">
+						<source src="assets/video/video.mp4" type="video/mp4" />
+						Sorry, your browser does not support HTML5 video.
+					</video>
+				</div>
+			</div>
+		</div> <!-- .product-preview -->
+	</div>
+
+	<div
+		#loader
+		[@onLoadingStateChange]="currentLoadingState"
+		(@onLoadingStateChange.done)="onLoadingDone()"
+		class="cd-loader">
+	</div>
+</div> <!-- .cd-immersive-video -->

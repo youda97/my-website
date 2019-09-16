@@ -1,1 +1,21 @@
-/* You can add global styles to this file, and also import other style files */
+@import "assets/scss/variables"; // colors, fonts etc...
+
+*, *::after, *::before {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	font-family: $primary-font;
+	color: $color-1;
+	background-color: $color-3;
+}
+
+a {
+	color: $color-2;
+	text-decoration: none;
+}
+
+img, video, svg {
+	max-width: 100%;
+}
