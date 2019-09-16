@@ -124,6 +124,7 @@ export class HomeComponent implements AfterViewInit {
 					preview,
 					`translateX(${(window.innerWidth - previewWidth - parseInt(immersiveVideoWrapperPadding, 10))}px)
 					translateY(${(window.innerHeight / 2 - previewHeight / 2)}px`);
+				preview.style.transitionDuration = "0.4s";
 
 				this.productIntro.nativeElement.classList.add("animate-content");
 				this.productVideoWrapper.nativeElement.firstElementChild.playbackRate = 1.5;

@@ -216,8 +216,7 @@
 		}
 
 		&.video-zoomed-out {
-			/* once the video has been scaled down - reduce the transition duration */
-			transition-duration: .6s;
+			animation-timing-function: cubic-bezier(0,0,1,1);
 		}
 
 		.product-video {
