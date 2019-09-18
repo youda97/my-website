@@ -48,11 +48,12 @@ export class HomeComponent implements AfterViewInit {
 	currentLoadingState = "loadingStop";
 	currentPreviewState = "center";
 	resizing = false;
+	// isLoading = true;
 
 	ngAfterViewInit() {
 		// if video is in cache 'canplaythrough' won't be triggered
 		if (this.productVideoWrapper.nativeElement.firstElementChild.readyState > 3) {
-			this.readyToPlay(event.target);
+			this.readyToPlay();
 		}
 		this.productVideoWrapper.nativeElement.firstElementChild.muted = true;
 		this.productVideoWrapper.nativeElement.firstElementChild.playbackRate = 0.5;
@@ -61,11 +62,11 @@ export class HomeComponent implements AfterViewInit {
 	canPlay(event) {
 		// if greater than 800px - we are not on a mobile device
 		if (window.innerWidth > 800) {
-			this.readyToPlay(event.target);
+			this.readyToPlay();
 		}
 	}
 
-	readyToPlay(video) {
+	readyToPlay() {
 		this.loader.nativeElement.classList.add("no-animation");
 		setTimeout(() => {
 			this.currentLoadingState = "loadingDisappear";
@@ -127,8 +128,9 @@ export class HomeComponent implements AfterViewInit {
 				preview.style.transitionDuration = "0.4s";
 
 				this.productIntro.nativeElement.classList.add("animate-content");
-				this.productVideoWrapper.nativeElement.firstElementChild.playbackRate = 1.5;
+				this.productVideoWrapper.nativeElement.firstElementChild.playbackRate = 1.6;
 
+				document.body.classList.remove("cd-overflow-hidden");
 				this.currentPreviewState = "right";
 			}, 1000);
 		}, 3000);
@@ -140,6 +142,7 @@ export class HomeComponent implements AfterViewInit {
 
 	onLoadingDone() {
 		if (this.loader.nativeElement.classList.contains("no-animation")) {
+			// this.isLoading = false;
 			this.startAnimation();
 		}
 	}
@@ -147,7 +150,6 @@ export class HomeComponent implements AfterViewInit {
 	onPreviewDone() {
 		if (this.productIntro.nativeElement.classList.contains("animate-content")) {
 			this.productPreview.nativeElement.classList.add("no-transition");
-			document.body.classList.remove("cd-overflow-hidden");
 		}
 	}
 
