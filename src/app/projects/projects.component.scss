@@ -1,0 +1,240 @@
+@import "../../assets/scss/variables"; // colors, fonts etc...
+
+@import "../../assets/scss/mixins"; // custom mixins
+
+@import "../../assets/scss/layout"; // responsive grid and media queries
+
+.cd-main-header {
+  color: $color-6;
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 80px;
+
+  h1 {
+    font-family: 'Open Sans', sans-serif;
+    color: inherit;
+  }
+}
+
+.cd-timeline {
+  overflow: hidden;
+  padding: calc(2 * 1.25em);
+  color: $color-5;
+  background-color: $color-11;
+  font-family: 'Droid Serif', serif;
+
+  h2 {
+	margin-top: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+  }
+}
+
+.cd-timeline__container {
+  position: relative;
+  padding: calc(1.25 * 1.25em) 0;
+
+  &::before { // this is the timeline vertical line
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 18px;
+    height: 100%;
+    width: 4px;
+    background: $color-7;
+  }
+
+  @include MQ(M) {
+    &::before {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}
+
+.cd-timeline__block {
+  display: flex;
+  position: relative;
+  z-index: 1; // make sure content is above the timeline vertical line
+  margin-bottom: calc(2 * 1.25em);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @include MQ(M) {
+    &:nth-child(even) {
+      flex-direction: row-reverse; // for even blocks -> lay out content from right to left
+    }
+  }
+}
+
+.cd-timeline__img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px $color-3, inset 0 2px 0 rgba(#000, 0.08), 0 3px 0 4px rgba(#000, 0.05);
+
+  img {
+    width: 24px;
+    height: 24px;
+  }
+
+  @include MQ(M) {
+    width: 60px;
+    height: 60px;
+    order: 1; // flex order -> place the image after cd-timeline__content
+    margin-left: calc(5% - 30px);
+    will-change: transform;
+
+    .cd-timeline__block:nth-child(even) & {
+      margin-right: calc(5% - 30px);
+    }
+  }
+}
+
+.cd-timeline__img--picture {
+  background-color: $color-10;
+}
+
+.cd-timeline__img--movie {
+  background-color: $color-9;
+}
+
+.cd-timeline__img--location {
+  background-color: $color-8;
+}
+
+.cd-timeline__content {
+  flex-grow: 1; // expand element so that it takes up all the available space inside its parent
+  position: relative;
+  margin-left: calc(1.25 * 1.25em);
+  background: $color-3;
+  border-radius: 0.25em;
+  padding: calc(1.25 * 1.25em);
+  box-shadow: 0 3px 0 $color-7;
+
+  &::before { // triangle next to content block
+    content: '';
+    position: absolute;
+    top: 16px;
+	right: 100%;
+	width: 0;
+	height: 0;
+	border: 7px solid transparent;
+	border-right-color: $color-3;
+  }
+
+  h2 {
+    color: $color-6;
+  }
+
+  @include MQ(M) {
+    width: 45%;
+    flex-grow: 0; // prevent element from growing inside its parent
+    will-change: transform;
+    margin: 0;
+	font-size: 1.2em;
+    line-height: 1.4;
+
+    &::before { // triangle
+      top: 24px;
+    }
+
+    .cd-timeline__block:nth-child(odd) &::before { // change triangle direction
+      right: auto;
+	  left: 100%;
+	  width: 0;
+	  height: 0;
+	  border: 7px solid transparent;
+	  border-left-color: $color-3;
+    }
+  }
+}
+
+.cd-timeline__date {
+  color: $color-5;
+  opacity: 0.7;
+
+  @include MQ(M) {
+    position: absolute;
+    width: 100%;
+    left: 120%;
+    top: 20px;
+
+    .cd-timeline__block:nth-child(even) & {
+      left: auto;
+      right: 120%;
+      text-align: right;
+    }
+  }
+}
+
+@include MQ(M) { // animations
+  .cd-timeline__img--hidden, .cd-timeline__content--hidden {
+    visibility: hidden;
+  }
+
+  .cd-timeline__img--bounce-in {
+    animation: cd-bounce-1 0.6s;
+  }
+
+  .cd-timeline__content--bounce-in {
+    animation: cd-bounce-2 0.6s;
+  }
+
+  .cd-timeline__block:nth-child(even) .cd-timeline__content--bounce-in {
+    animation-name: cd-bounce-2-inverse;
+  }
+}
+
+
+@keyframes cd-bounce-1 {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes cd-bounce-2 {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translateX(20px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes cd-bounce-2-inverse {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translateX(-20px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
