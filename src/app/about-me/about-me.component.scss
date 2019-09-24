@@ -1,0 +1,112 @@
+@import "../../assets/scss/layout"; // responsive grid and media queries
+
+section {
+    padding: calc(2 * 1.25em);
+
+	.cd-about {
+		div {
+			overflow-y: auto;
+		}
+	}
+
+	h1 {
+		color: #303f4a;
+		text-align: center;
+		font-size: 2.3em;
+		font-weight: bold;
+	}
+
+	p, footer {
+		width: 90%;
+		max-width: 768px;
+		margin: 2em auto;
+		line-height: 1.6;
+		color: #535966;
+		text-align: left;
+
+		ol {
+			padding-left: 0;
+		}
+	}
+
+	.skills {
+		max-width: 768px;
+		margin: auto;
+
+		.column {
+			text-align: center;
+			border-collapse: collapse;
+			padding-right: 15px;
+			padding-left: 15px;
+			width: 100%;
+
+			.skill {
+				text-align: left;
+				padding: 8px;
+				max-width: 128px;
+				max-height: 30px;
+			}
+
+			.rating {
+				text-align: right;
+				padding: 8px;
+			}
+
+			@include MQ(M) {
+				.skill {
+					padding: 3px;
+				}
+
+				.rating {
+					text-align: center;
+					padding: 3px;
+				}
+			}
+
+			.no-fill {
+				// min-height: 30px;
+				position: relative;
+				display: inline-block;
+				height: 22px;
+				width: 110px;
+				background: url(../../assets/img/cd-star-no-fill.svg);
+				transition: all .2s;
+
+				@for $i from 1 through 5 {
+					.fill-#{$i} {
+						display: inline-block;
+						position: absolute;
+						left: 0;
+						height: 22px;
+						width: calc(19px + 22px * (#{$i} - 1));
+						background: url(../../assets/img/cd-star.svg);
+						padding: 3px 0px;
+					}
+				}
+			}
+
+			tr:hover {
+				background: #F2F2F2;
+
+				.no-fill {
+					transform: scale(1.1);
+				}
+			}
+		}
+
+		@include MQ(M) {
+			.column {
+				width: 50%;
+				float: left;
+			}
+		}
+	}
+
+	@include MQ(M) {
+		p {
+			font-size: 1.177rem;
+			line-height: 2;
+		}
+	}
+}
+
