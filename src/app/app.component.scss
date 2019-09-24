@@ -1,1 +1,30 @@
+.back-to-top {
+    position: fixed;
+    bottom: 50px;
+    right: 30px;
+    cursor: pointer;
+    transition-duration: 0.2s;
+    transition-timing-function: linear;
+    transition-delay: 0s;
+    z-index: 9999;
+    transition-property: opacity, visibility;
 
+    .back-to-top-button {
+        width: 3rem;
+        height: 3rem;
+        border-radius: 1.5rem;
+        background: rgba(187, 187, 187, 0.7);
+        border-color: transparent;
+        position: fixed;
+        bottom: 1.5rem;
+        right: 1.5rem;
+        cursor: pointer;
+        z-index: 9999;
+        padding-top: .325rem;
+
+        &:hover {
+            background: #454545;
+            fill: #fff;
+        }
+    }
+}

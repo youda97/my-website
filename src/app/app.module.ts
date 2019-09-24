@@ -8,12 +8,16 @@ import { HomeComponent } from "./home/home.component";
 import { ProjectsComponent } from "./projects/projects.component";
 
 import { NavigationModule } from "./home/navigation/navigation.module";
+import { AboutMeComponent } from "./about-me/about-me.component";
+import { ContactInfoComponent } from "./contact-info/contact-info.component";
 
 @NgModule({
 	declarations: [
 		AppComponent,
 		HomeComponent,
-		ProjectsComponent
+		ProjectsComponent,
+		AboutMeComponent,
+		ContactInfoComponent
 	],
 	imports: [
 		BrowserModule,

@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, HostListener } from "@angular/core";
 
 @Component({
 	selector: "app-root",
@@ -6,5 +6,21 @@ import { Component } from "@angular/core";
 	styleUrls: ["./app.component.scss"]
 })
 export class AppComponent {
-	title = "my-website";
+	distance = 100;
+	anchorElement = document.documentElement;
+
+	windowScrolled = false;
+
+	scrollToTop() {
+		this.anchorElement.scrollIntoView({behavior: "smooth"});
+	}
+
+	@HostListener("window:scroll")
+	onWindowScroll() {
+		if (this.anchorElement.scrollTop > this.distance) {
+			this.windowScrolled = true;
+		} else if (this.windowScrolled && this.anchorElement.scrollTop < this.distance) {
+			this.windowScrolled = false;
+		}
+	}
 }
