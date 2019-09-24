@@ -1,9 +1,10 @@
 <div #immersiveVideoWrapper class="cd-immersive-video">
+	<div *ngIf="videoDone" class="background"></div>
 	<div class="intro-wrapper">
 		<div #productIntro class="product-intro">
 			<div>
 				<h1 class="item item-1">Yousef Ouda</h1>
-				<p class="item item-2">Web Developer based in London, Canada. I am a fourth year student with good knowledge of front-end techniques. I love structure and order and also stand for quality.</p>
+				<p class="item item-2">A Web Developer based in London, Canada. I am a fourth year software engineering student at Western University with good knowledge of front-end techniques. I love structure and order and also stand for quality.</p>
 				<a href="mailto:ouda.yousef@gmail.com?subject=Website%20Inquiry" class="cd-btn item item-3">Say Hello!</a>
 				<app-navigation></app-navigation>
 			</div>
@@ -24,7 +25,7 @@
 
 			<div #productVideo class="product-video">
 				<div #productVideoWrapper class="video-wrapper">
-					<video (canplay)="canPlay($event)">
+					<video (canplay)="canPlay()">
 						<source src="assets/video/video.mp4" type="video/mp4" />
 						Sorry, your browser does not support HTML5 video.
 					</video>

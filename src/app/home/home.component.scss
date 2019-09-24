@@ -24,6 +24,19 @@
 	margin: 0 auto;
 	overflow: hidden;
 
+	.background {
+		background-image: url("../../assets/img/img-1.jpg");
+		opacity: 1;
+		position: absolute;
+		z-index: -1;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		width: 100%;
+		height: 100%;
+	}
+
 	@include MQ(M) {
 		.intro-wrapper {
 			display: table;
@@ -90,16 +103,18 @@
 		font-weight: 700;
 		font-size: 63px;
 		line-height: 1.2;
-		color: $color-4;
+		color: white;
 		margin-top: 0;
 		margin-bottom: 0.4em;
 	}
 
 	p {
+		color: #dfdfdf;
 		font-size: 20px;
-		font-weight: 200;
+		font-weight: 500;
 		line-height: 1.4;
 		margin: 1em 0 1.4em;
+		@include font-smoothing();
 	}
 
 	@include MQ(M) {

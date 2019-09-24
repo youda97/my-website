@@ -48,6 +48,7 @@ export class HomeComponent implements AfterViewInit {
 	currentLoadingState = "loadingStop";
 	currentPreviewState = "center";
 	resizing = false;
+	videoDone = false;
 	// isLoading = true;
 
 	ngAfterViewInit() {
@@ -55,11 +56,14 @@ export class HomeComponent implements AfterViewInit {
 		if (this.productVideoWrapper.nativeElement.firstElementChild.readyState > 3) {
 			this.readyToPlay();
 		}
+		if (window.innerWidth < 800) {
+			this.videoDone = true;
+		}
 		this.productVideoWrapper.nativeElement.firstElementChild.muted = true;
 		this.productVideoWrapper.nativeElement.firstElementChild.playbackRate = 0.5;
 	}
 
-	canPlay(event) {
+	canPlay() {
 		// if greater than 800px - we are not on a mobile device
 		if (window.innerWidth > 800) {
 			this.readyToPlay();
@@ -111,6 +115,7 @@ export class HomeComponent implements AfterViewInit {
 
 		setTimeout(() => {
 			preview.classList.remove("no-transition");
+			this.videoDone = true;
 			// scale down the video
 			this.transform(
 				preview,
@@ -128,7 +133,7 @@ export class HomeComponent implements AfterViewInit {
 				preview.style.transitionDuration = "0.4s";
 
 				this.productIntro.nativeElement.classList.add("animate-content");
-				this.productVideoWrapper.nativeElement.firstElementChild.playbackRate = 1.6;
+				this.productVideoWrapper.nativeElement.firstElementChild.playbackRate = 2;
 
 				document.body.classList.remove("cd-overflow-hidden");
 				this.currentPreviewState = "right";
