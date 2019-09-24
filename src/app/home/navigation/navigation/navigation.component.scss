@@ -4,15 +4,13 @@
 
 @import "../../../../assets/scss/layout"; // responsive grid and media queries
 
-ol, ul {
-	list-style: none;
-}
 
 .cd-slider-navigation {
 	z-index: 3;
 	padding-left: 0;
 	position: relative;
 	top: 20px;
+	list-style: none;
 
 	li {
 		display: inline-block;

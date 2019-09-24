@@ -35,6 +35,12 @@ export class NavigationComponent {
 		} else if (document.getElementById("projects").getBoundingClientRect().top < 0) {
 			items.forEach(item => item.classList.remove("selected"));
 			this.projects.nativeElement.classList.add("selected");
+		} else if (document.getElementById("about-me").getBoundingClientRect().top < 0) {
+			items.forEach(item => item.classList.remove("selected"));
+			this.aboutMe.nativeElement.classList.add("selected");
+		} else if (document.getElementById("contact-info").getBoundingClientRect().top < 0) {
+			items.forEach(item => item.classList.remove("selected"));
+			this.contactInfo.nativeElement.classList.add("selected");
 		}
 	}
 }
