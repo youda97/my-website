@@ -1,0 +1,162 @@
+@import "../../assets/scss/variables"; // colors, fonts etc...
+
+@import "../../assets/scss/mixins"; // custom mixins
+
+@import "../../assets/scss/layout"; // responsive grid and media queries
+
+.contactWrapper {
+    width: 100%;
+    background: #181818;
+	background: url(../../assets/img/dark_texture.jpg) repeat;
+
+	p, li {
+		color: #6d6d6d !important;
+		padding-top: 2px;
+		font-size: 1em;
+		font-family: helvetica,Arial;
+		color: #5c5c5c;
+		line-height: 1.5em;
+		padding: 9px 20px;
+		margin: 0;
+	}
+
+	h2 {
+		padding: 12px 20px;
+		font-size: 2em;
+		font-weight: bold;
+		margin: 0px;
+	}
+
+	h3 {
+		padding: 20px 20px 0;
+		font-size: 1.8em;
+		font-weight: bold;
+		margin: 0;
+	}
+
+	h2, h3 {
+		color: #8e8e8e !important;
+	}
+
+	#contact {
+		padding: 40px 0;
+		width: 100%;
+		max-width: 960px;
+		margin: 0 auto;
+
+		h2 {
+			text-align: left;
+		}
+
+		.article {
+			float: left;
+			width: 48%;
+		}
+
+		.artc2 {
+			width: 38%;
+			padding-left: 10%;
+		}
+	}
+}
+
+a:hover {
+    outline: 0;
+}
+
+.social {
+	opacity: 1;
+	height: 24px;
+    margin-top: 23px;
+	text-align: center;
+	transform: translateX(0px) translateY(0px) translateZ(0px);
+	transition: opacity 500ms ease 0s,
+	transform 500ms ease 0s;
+
+	.w-button {
+		display: inline-block;
+		padding: 9px 15px;
+		background-color: #3898EC;
+		color: white;
+		border: 0;
+		line-height: inherit;
+		text-decoration: none;
+		cursor: pointer;
+		border-radius: 0;
+
+		width: 24px;
+		height: 24px;
+		margin: 0 15px;
+		padding: 0px;
+		background-color: transparent;
+		filter: brightness(0) invert(1);
+		background-position: 0px 0px;
+		background-size: 24px 24px;
+		background-repeat: no-repeat;
+		background-attachment: scroll;
+		opacity: 0.5;
+		transition: all 300ms ease;
+		cursor: pointer;
+	}
+
+	.facebook_button {
+		background-image: url(../../assets/img/facebook.png);
+
+		&:hover {
+			filter: none;
+			border-radius: 2px;
+			background-color: white;
+			opacity: 1;
+		}
+	}
+
+	.linkedin_button {
+		background-image: url(../../assets/img/LinkedIn.png);
+
+		&:hover {
+			filter: none;
+			border-radius: 2px;
+			background-color: white;
+			opacity: 1;
+		}
+	}
+
+	.instagram_button {
+		background-image: url(../../assets/img/insta-temp.png);
+
+		&:hover {
+			filter: none;
+			border-radius: 6px;
+			background-image: url(../../assets/img/insta.png);
+			opacity: 1;
+		}
+	}
+
+	.snapshat_button {
+		background-image: url(../../assets/img/snap-temp.png);
+		opacity: 0.7;
+
+		&:hover {
+			filter: none;
+			background-image: url(../../assets/img/snapchat.png);
+			opacity: 1;
+		}
+	}
+}
+
+
+
+.clear {
+    clear: both;
+}
+
+.footer {
+    background: #181818;
+    background: url(../../assets/img/dark_texture.jpg) repeat;
+    width: 100%;
+    padding: 20px 0;
+    font-size: 1em;
+    font-family: helvetica , Arial;
+    color: #6d6d6d;
+    text-align: center;
+}
