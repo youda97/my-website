@@ -1,5 +1,7 @@
 @import "assets/scss/variables"; // colors, fonts etc...
 
+@import "assets/scss/layout"; // responsive grid and media queries
+
 *, *::after, *::before {
 	box-sizing: border-box;
 }
@@ -13,6 +15,20 @@ body {
 	font-family: $primary-font;
 	color: $color-1;
 	background-color: $color-3;
+
+	&::before {
+		/* never visible - this is used in projects component to check the current MQ */
+		content: 'mobile';
+		display: none;
+	}
+
+	@include MQ(L) {
+
+		&::before {
+			/* never visible - this is used in projects component to check the current MQ */
+			content: 'desktop';
+		}
+	}
 }
 
 a {
