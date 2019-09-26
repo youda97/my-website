@@ -142,6 +142,17 @@ a:hover {
 			opacity: 1;
 		}
 	}
+
+	.email_button {
+		background-image: url(../../assets/img/email-temp.svg);
+		opacity: 0.7;
+
+		&:hover {
+			filter: none;
+			background-image: url(../../assets/img/email.svg);
+			opacity: 1;
+		}
+	}
 }
 
 
