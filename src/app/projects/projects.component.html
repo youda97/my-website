@@ -4,13 +4,50 @@
 	</header>
 	<div class="container max-width-lg cd-timeline__container">
 		<div #block class="cd-timeline__block">
+			<div #img class="cd-timeline__img cd-timeline__img--picture">
+				<img src="../../../assets/img/cd-icon-picture.svg" alt="Picture">
+				<em>Capstone Project</em>
+			</div> <!-- cd-timeline__img -->
+
+			<div #content class="cd-timeline__content text-component">
+				<div class="cd-project-container-image">
+					<img class="cd-project-background" src="assets/img/brainview-mobile.png" alt="Background">
+					<img class="cd-project-image" src="assets/img/brainview-mobile.png" alt="Project Preview">
+				</div>
+
+
+				<h2>BrainView</h2>
+				<p class="color-contrast-medium">
+					An augmented reality application to guide surgeons when treating hydrocephalus and provides neuronavigational assistance in the placement of the external ventricular drain.
+				</p>
+				<ul>
+					<li>The web application handles the upload of a segmented ventricle to a patient profile and assigns a surgeon to it.</li>
+					<li>The mobile application handles the augmented reality portion and projection onto the patient's skull.</li>
+				</ul>
+
+				<div class="flex justify-between items-center">
+					<span class="cd-timeline__date">April 2020</span>
+					<div>
+						<a target="_blank" href="https://github.com/youda97/BrainView_Frontend" class="btn btn--subtle">Frontend</a>
+						<a target="_blank" href="https://github.com/SJKIM96/Brainview_Mobile" class="btn btn--subtle">Mobile</a>
+						<a target="_blank" href="https://github.com/Omar-Chahbar/BrainView_Backend" class="btn btn--subtle">Backend</a>
+						<a target="_blank" href="https://github.com/Omar-Chahbar/BrainView_Database" class="btn btn--subtle">Database</a>
+					</div>
+				</div>
+			</div> <!-- cd-timeline__content -->
+		</div> <!-- cd-timeline__block -->
+
+		<div #block class="cd-timeline__block">
 			<div #img class="cd-timeline__img cd-timeline__img--location">
 				<img src="../../../assets/img/cd-icon-location.svg" alt="Location">
 				<em>IBM 16 month internship</em>
 			</div> <!-- cd-timeline__img -->
 
 			<div #content class="cd-timeline__content text-component">
-				<img class="cd-project-image" src="assets/img/carbon-tutorial-angular.png" alt="Project Preview">
+				<div class="cd-project-container-image">
+					<img class="cd-project-background" src="assets/img/carbon-tutorial-angular.png" alt="Background">
+					<img class="cd-project-image" src="assets/img/carbon-tutorial-angular.png" alt="Project Preview">
+				</div>
 				<h2>Carbon Tutorial Angular</h2>
 				<p class="color-contrast-medium">A tutorial that guides the user in creating an Angular app using Carbon
 					Components. It tutorial step illustrates a differe t aspect of developing web applications and
@@ -18,6 +55,15 @@
 
 				<div class="flex justify-between items-center">
 					<span class="cd-timeline__date">August 2019</span>
+					<div>
+						<a
+							target="_blank"
+							href="https://github.com/carbon-design-system/carbon-tutorial-angular"
+							class="btn btn--subtle">
+							Read more
+						</a>
+						<a target="_blank" href="https://carbondesignsystem.com/developing/angular-tutorial/overview/" class="btn btn--subtle">Demo</a>
+					</div>
 				</div>
 			</div> <!-- cd-timeline__content -->
 		</div> <!-- cd-timeline__block -->
@@ -29,7 +75,10 @@
 			</div> <!-- cd-timeline__img -->
 
 			<div #content class="cd-timeline__content text-component">
-				<img class="cd-project-image" src="assets/img/carbon-angular-starter.png" alt="Project Preview">
+				<div class="cd-project-container-image">
+					<img class="cd-project-background" src="assets/img/carbon-angular-starter.png" alt="Background">
+					<img class="cd-project-image" src="assets/img/carbon-angular-starter.png" alt="Project Preview">
+				</div>
 				<h2>Carbon Angular Starter</h2>
 				<p class="color-contrast-medium">A simple starter app for boostraping with Carbon Components Angular.
 					The boilerplate already as all the dependecies installed and is ready for you to start developing
@@ -37,13 +86,15 @@
 
 				<div class="flex justify-between items-center">
 					<span class="cd-timeline__date">January 2019</span>
-					<a
-						target="_blank"
-						href="https://github.com/carbon-design-system/carbon-angular-starter"
-						class="btn btn--subtle">
-						Read more
-					</a>
-					<a target="_blank" href="https://carbon-angular-starter.netlify.com/" class="btn btn--subtle">Demo</a>
+					<div>
+						<a
+							target="_blank"
+							href="https://github.com/carbon-design-system/carbon-angular-starter"
+							class="btn btn--subtle">
+							Read more
+						</a>
+						<a target="_blank" href="https://carbon-angular-starter.netlify.com/" class="btn btn--subtle">Demo</a>
+					</div>
 				</div>
 			</div> <!-- cd-timeline__content -->
 		</div> <!-- cd-timeline__block -->
@@ -55,7 +106,10 @@
 			</div> <!-- cd-timeline__img -->
 
 			<div #content class="cd-timeline__content text-component">
-				<img class="cd-project-image" src="assets/img/carbon-components-angular.png" alt="Project Preview">
+				<div class="cd-project-container-image">
+					<img class="cd-project-background" src="assets/img/carbon-components-angular.png" alt="Background">
+					<img class="cd-project-image" src="assets/img/carbon-components-angular.png" alt="Project Preview">
+				</div>
 				<h2>Carbon Components Angular</h2>
 				<p class="color-contrast-medium">A library that provides front-end developers & engineers a collection
 					of reusable Angular components to build websites and user interfaces. Adopting the library enables
@@ -63,8 +117,10 @@
 
 				<div class="flex justify-between items-center">
 					<span class="cd-timeline__date">Sept 2018</span>
-					<a target="_blank" href="https://github.com/IBM/carbon-components-angular" class="btn btn--subtle">Read more</a>
-					<a target="_blank" href="https://angular.carbondesignsystem.com/?path=/story/*" class="btn btn--subtle">Demo</a>
+					<div>
+						<a target="_blank" href="https://github.com/IBM/carbon-components-angular" class="btn btn--subtle">Read more</a>
+						<a target="_blank" href="https://angular.carbondesignsystem.com/?path=/story/*" class="btn btn--subtle">Demo</a>
+					</div>
 				</div>
 			</div> <!-- cd-timeline__content -->
 		</div> <!-- cd-timeline__block -->
@@ -76,7 +132,10 @@
 			</div> <!-- cd-timeline__img -->
 
 			<div #content class="cd-timeline__content text-component">
-				<img class="cd-project-image" src="assets/img/self-start.png" alt="Project Preview">
+				<div class="cd-project-container-image">
+					<img class="cd-project-background" src="assets/img/self-start.png" alt="Background">
+					<img class="cd-project-image" src="assets/img/self-start.png" alt="Project Preview">
+				</div>
 				<h2>Self-Start Body Smart</h2>
 				<p class="color-contrast-medium">An online application that brings the treatment of a physiotherapist
 					into the client's home and improve the traditional approach of the patient’s progression assessment.
@@ -85,8 +144,10 @@
 
 				<div class="flex justify-between items-center">
 					<span class="cd-timeline__date">April 2018</span>
-					<a target="_blank" href="https://github.com/UWO-ECE-Software-Engineering/Brigade" class="btn btn--subtle">Read
-						more</a>
+					<div>
+						<a target="_blank" href="https://github.com/UWO-ECE-Software-Engineering/Brigade" class="btn btn--subtle">Read
+							more</a>
+					</div>
 				</div>
 			</div> <!-- cd-timeline__content -->
 		</div> <!-- cd-timeline__block -->
@@ -98,7 +159,10 @@
 			</div> <!-- cd-timeline__img -->
 
 			<div #content class="cd-timeline__content text-component">
-				<img class="cd-project-image" src="../../../assets/img/storkdb.png" alt="Project Preview">
+				<div class="cd-project-container-image">
+					<img class="cd-project-background" src="assets/img/storkdb.png" alt="Background">
+					<img class="cd-project-image" src="assets/img/storkdb.png" alt="Project Preview">
+				</div>
 				<h2>Stork DB</h2>
 				<p class="color-contrast-medium">A dynamic directory for bird watchers, enabling the user to track and
 					monitor their progress and activity. Made use of information systems and data management tools like
@@ -106,8 +170,10 @@
 
 				<div class="flex justify-between items-center">
 					<span class="cd-timeline__date">December 2017</span>
-					<a target="_blank" href="https://github.com/youda97/StorkDB/tree/master/Assignment4" class="btn btn--subtle">Read
-						more</a>
+					<div>
+						<a target="_blank" href="https://github.com/youda97/StorkDB/tree/master/Assignment4" class="btn btn--subtle">Read
+							more</a>
+					</div>
 				</div>
 			</div> <!-- cd-timeline__content -->
 		</div> <!-- cd-timeline__block -->
@@ -119,7 +185,10 @@
 			</div> <!-- cd-timeline__img -->
 
 			<div #content class="cd-timeline__content text-component">
-				<img class="cd-project-image" src="../../../assets/img/nasa-collections.png" alt="Project Preview">
+				<div class="cd-project-container-image">
+					<img class="cd-project-background" src="assets/img/nasa-collections.png" alt="Background">
+					<img class="cd-project-image" src="assets/img/nasa-collections.png" alt="Project Preview">
+				</div>
 				<h2>Nasa Collections</h2>
 				<p class="color-contrast-medium">A web application using server-side and client-side scripting to
 					display images from NASA with the ability to search based on a given phrase, create image
@@ -131,8 +200,10 @@
 
 				<div class="flex justify-between items-center">
 					<span class="cd-timeline__date">December 2017</span>
-					<a target="_blank" href="https://github.com/youda97/NasaWebpage/tree/master/NasaCollections"
-						class="btn btn--subtle">Read more</a>
+					<div>
+						<a target="_blank" href="https://github.com/youda97/NasaWebpage/tree/master/NasaCollections"
+							class="btn btn--subtle">Read more</a>
+					</div>
 				</div>
 			</div> <!-- cd-timeline__content -->
 		</div> <!-- cd-timeline__block -->
