@@ -104,8 +104,13 @@
 		font-size: 63px;
 		line-height: 1.2;
 		color: white;
-		margin-top: 0;
+		margin-top: 20px;
 		margin-bottom: 0.4em;
+
+		@media only screen and (min-width: $M) { 
+			margin-top: 0;
+		}
+
 	}
 
 	p {
